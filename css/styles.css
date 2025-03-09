@@ -1,0 +1,210 @@
+/* Importing Google Font: Spartan */
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+/* Root Variables for Color Scheme */
+:root {
+    --color-main: hsl(222, 26%, 31%);
+    --color-toggle: hsl(223, 31%, 20%);
+    --color-screen: hsl(224, 36%, 15%);
+    --color-del-reset: hsl(225, 21%, 49%);
+    --color-shadow-del-reset: hsl(224, 28%, 35%);
+    --color-buttons: hsl(30, 25%, 89%);
+    --color-shadow-buttons: hsl(28, 16%, 65%);
+    --color-result: hsl(6, 63%, 50%);
+    --color-shadow-result: hsl(6, 70%, 34%);
+    --color-text: hsl(221, 14%, 31%);
+}
+
+/* Universal Reset and Font Styles */
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Spartan', sans-serif;
+    font-size: 32px;
+}
+
+/* General Body Styling */
+body {
+    height: 100vh;
+    background-color: var(--color-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: background-color 0.5s ease;
+}
+
+/* Calculator Layout */
+.calculator {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    align-items: center;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    margin: 20px 0 10px;
+    position: relative;
+}
+
+.header > h1 {
+    color: var(--color-buttons);
+    position: absolute;
+    left: -80px;
+    top: -15px;
+}
+
+.header > h6 {
+    align-self: center;
+}
+
+label, h6 {
+    font-size: 13px;
+    color: var(--color-buttons);
+    position: relative;
+    left: 75px;
+}
+
+/* Input Fields Styling */
+.input {
+    height: 30px;
+    width: 80px;
+    border-radius: 30px;
+    background-color: var(--color-toggle);
+    position: relative;
+    left: 85px;
+}
+
+input:checked {
+    background-color: var(--color-result);
+}
+
+.user-input {
+    background-color: var(--color-screen);
+    height: 80px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 10px;
+    color: white;
+    overflow: hidden;
+}
+
+.user-input > .previous-operand {
+    font-size: 15px;
+}
+
+/* Calculator Grid Layout */
+.grid-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: repeat(5, 70px);
+    background-color: var(--color-toggle);
+    padding: 15px 10px;
+    border-radius: 10px;
+}
+
+/* Button Styling */
+.grid-container > button {
+    margin: 0 8px;
+    padding: 8px 0;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--color-buttons);
+    color: var(--color-text);
+    box-shadow: 0 5px var(--color-shadow-buttons);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth button transitions */
+}
+
+button:active {
+    transform: translateY(2px); /* Slight button press effect */
+}
+
+.column-span {
+    grid-column: span 2;
+}
+
+button:nth-child(17), button:nth-child(4) {
+    background-color: var(--color-del-reset);
+    box-shadow: 0 5px var(--color-shadow-del-reset);
+    color: var(--color-buttons);
+    font-size: 18px;
+    padding: 17px 0;
+}
+
+button:nth-child(18) {
+    background-color: var(--color-result);
+    box-shadow: 0 5px var(--color-shadow-result);
+    color: white;
+}
+
+/* Theme Selector Switch Styling */
+[id="theme1"], [id="theme2"], [id="theme3"] {
+    appearance: none;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 30px;
+    top: 7px;
+    background-color: var(--color-buttons);
+    box-shadow: 0 1.2px var(--color-shadow-buttons);
+}
+
+[id="theme1"] {
+    left: 10px;
+}
+
+[id="theme2"] {
+    left: 33px;
+}
+
+[id="theme3"] {
+    left: 55px;
+}
+
+/* Transition for Theme Switcher */
+input:checked {
+    background-color: var(--color-result);
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* Labels for Theme Selector */
+label {
+    top: -40px;
+}
+
+label[for="theme1"] {
+    left: 13px;
+}
+
+label[for="theme2"] {
+    left: 20px;
+}
+
+label[for="theme3"] {
+    left: 26px;
+}
+
+/* Footer Attribution Styling */
+.attribution {
+    color: var(--color-buttons);
+    font-size: 11px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.attribution a {
+    color: var(--color-buttons);
+    font-size: 11px;
+}
