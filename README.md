@@ -11,3 +11,5 @@ This is a basic calculator built with JavaScript. It allows users to perform sim
 - HTML
 - CSS
 - JavaScript
+
+🔗 **Live Demo:** [Simple Calculator](https://jaroshew.github.io/Calculator-JS/)
